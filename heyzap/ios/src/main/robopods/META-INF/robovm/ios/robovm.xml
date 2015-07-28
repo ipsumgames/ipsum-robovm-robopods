@@ -1,0 +1,25 @@
+<config>
+    <libs>
+
+        <lib>xml2</lib>
+        <lib>z</lib>
+    </libs>
+    <frameworkPaths>
+        <path>libs</path>
+    </frameworkPaths>
+    <frameworks>
+        <framework>HayzapAds</framework>
+
+        <framework>AdSupport</framework>
+        <framework>CoreGraphics</framework>
+        <framework>CoreTelephony</framework>
+        <framework>EventKit</framework>
+        <framework>EventKitUI</framework>
+        <framework>GoogleMobileAds</framework>
+        <framework>MobileCoreServices</framework>
+        <framework>QuartzCore</framework>
+        <framework>Security</framework>
+        <framework>StoreKit</framework>
+        <framework>iAd</framework>
+    </frameworks>
+</config>
