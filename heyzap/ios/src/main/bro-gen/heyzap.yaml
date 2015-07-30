@@ -99,8 +99,8 @@ protocols:
 
 
 values:
-    (k?HZNetwor.*):
-        enum: HZNetwor
+    (k?HZNetwork.*):
+        enum: HZNetwork
         name: '#{g[0]}'
         type: NSString
 
