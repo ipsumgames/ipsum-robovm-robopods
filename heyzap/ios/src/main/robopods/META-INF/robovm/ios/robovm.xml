@@ -1,25 +1,70 @@
 <config>
     <libs>
+        <lib>libs/libAppLovinSdk.a</lib>
 
         <lib>xml2</lib>
         <lib>z</lib>
     </libs>
-    <frameworkPaths>
-        <path>libs</path>
-    </frameworkPaths>
     <frameworks>
-        <framework>HayzapAds</framework>
+        <framework>HeyzapAds</framework>
+        <framework>GoogleMobileAds</framework>
 
+        <framework>AVFoundation</framework>
         <framework>AdSupport</framework>
         <framework>CoreGraphics</framework>
+        <framework>CoreMedia</framework>
         <framework>CoreTelephony</framework>
         <framework>EventKit</framework>
         <framework>EventKitUI</framework>
-        <framework>GoogleMobileAds</framework>
+        <framework>MediaPlayer</framework>
         <framework>MobileCoreServices</framework>
         <framework>QuartzCore</framework>
         <framework>Security</framework>
         <framework>StoreKit</framework>
+        <framework>SystemConfiguration</framework>
+        <framework>MessageUI</framework>
         <framework>iAd</framework>
     </frameworks>
+
+    <frameworkPaths>
+        <path>libs</path>
+    </frameworkPaths>
+
+    <exportedSymbols>
+        <symbol>HZNetworkHeyzap</symbol>
+        <symbol>HZNetworkCrossPromo</symbol>
+        <symbol>HZNetworkFacebook</symbol>
+        <symbol>HZNetworkUnityAds</symbol>
+        <symbol>HZNetworkAppLovin</symbol>
+        <symbol>HZNetworkVungle</symbol>
+        <symbol>HZNetworkChartboost</symbol>
+        <symbol>HZNetworkAdColony</symbol>
+        <symbol>HZNetworkAdMob</symbol>
+        <symbol>HZNetworkIAd</symbol>
+        <symbol>HZNetworkHyperMX</symbol>
+        <symbol>HZNetworkCallbackInitialized</symbol>
+        <symbol>HZNetworkCallbackShow</symbol>
+        <symbol>HZNetworkCallbackAvailable</symbol>
+        <symbol>HZNetworkCallbackHide</symbol>
+        <symbol>HZNetworkCallbackFetchFailed</symbol>
+        <symbol>HZNetworkCallbackClick</symbol>
+        <symbol>HZNetworkCallbackDismiss</symbol>
+        <symbol>HZNetworkCallbackIncentivizedResultIncomplete</symbol>
+        <symbol>HZNetworkCallbackIncentivizedResultComplete</symbol>
+        <symbol>HZNetworkCallbackAudioStarting</symbol>
+        <symbol>HZNetworkCallbackAudioFinished</symbol>
+        <symbol>HZNetworkCallbackBannerLoaded</symbol>
+        <symbol>HZNetworkCallbackBannerClick</symbol>
+        <symbol>HZNetworkCallbackBannerHide</symbol>
+        <symbol>HZNetworkCallbackBannerDismiss</symbol>
+        <symbol>HZNetworkCallbackBannerFetchFailed</symbol>
+        <symbol>HZNetworkCallbackLeaveApplication</symbol>
+        <symbol>HZNetworkCallbackChartboostMoreAppsFetchFailed</symbol>
+        <symbol>HZNetworkCallbackChartboostMoreAppsDismiss</symbol>
+        <symbol>HZNetworkCallbackChartboostMoreAppsHide</symbol>
+        <symbol>HZNetworkCallbackChartboostMoreAppsClick</symbol>
+        <symbol>HZNetworkCallbackChartboostMoreAppsShow</symbol>
+        <symbol>HZNetworkCallbackChartboostMoreAppsAvailable</symbol>
+        <symbol>HZNetworkCallbackChartboostMoreAppsClickFailed</symbol>
+    </exportedSymbols>
 </config>

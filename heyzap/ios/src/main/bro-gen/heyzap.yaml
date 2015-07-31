@@ -8,13 +8,22 @@ header_root: '/../robopods/META-INF/robovm/ios/libs/'
 headers:
     - HeyzapAds.framework/Headers/HeyzapAds.h
     - HeyzapAds.framework/Headers/HZLog.h
+    - HeyzapAds.framework/Headers/HZBannerAd.h
+    - HeyzapAds.framework/Headers/HZBannerAdOptions.h
+    - HeyzapAds.framework/Headers/HZInterstitialAd.h
+    - HeyzapAds.framework/Headers/HZShowOptions.h
 
 typedefs:
     'void (^)(NSString *, NSString *)': '@Block VoidBlock2<NSString, NSString>'
+    'void (^)(HZBannerAd *)': '@Block VoidBlock1<HZBannerAd>'
+    'void (^)(BOOL, NSError *)': '@Block VoidBlock2<Boolean, NSError>'
 
 enums:
     HZAdOptions: {}
     HZDebugLevel: {first: HZDebugLevelVerbose}
+    HZBannerPosition: {first: HZBannerPositionTop}
+    HZFacebookBannerSize: {first: HZFacebookBannerSize320x50}
+    HZAdMobBannerSize: {first: HZAdMobBannerSizeFlexibleWidthPortrait}
 
 classes:
     HeyzapAds: # DONE
@@ -69,6 +78,105 @@ classes:
             '+debug:':
                 name: debug
 
+    HZBannerAd: # DONE
+        methods:
+            '+placeBannerInView:position:options:success:failure:':
+                name: placeBanner
+            '+requestBannerWithOptions:success:failure:':
+                name: requestBanner
+
+    HZInterstitialAd: # DONE
+        methods:
+            '+show':
+                name: show
+            '+showForTag:':
+                name: show
+            '+showForTag:completion:':
+                name: show
+            '+showWithOptions:':
+                name: show
+            '+setDelegate:':
+                name: setDelegate
+            '+fetch':
+                name: fetch
+            '+fetchWithCompletion:':
+                name: fetch
+            '+fetchForTag:':
+                name: fetch
+            '+fetchForTag:withCompletion:':
+                name: fetch
+            '+isAvailable':
+                name: isAvailable
+            '+isAvailableForTag:':
+                name: isAvailableForTag
+            '+setCreativeID:':
+                name: setCreativeID
+            '+forceTestCreative:':
+                name: forceTestCreative
+            '+setCreativeType:':
+                name: setCreativeType
+
+    HZVideoAd: # DONE
+        methods:
+            '+show':
+                name: show
+            '+showForTag:':
+                name: show
+            '+showForTag:completion:':
+                name: show
+            '+showWithOptions:':
+                name: show
+            '+setDelegate:':
+                name: setDelegate
+            '+fetch':
+                name: fetch
+            '+fetchWithCompletion:':
+                name: fetch
+            '+fetchForTag:':
+                name: fetch
+            '+fetchForTag:withCompletion:':
+                name: fetch
+            '+isAvailable':
+                name: isAvailable
+            '+isAvailableForTag:':
+                name: isAvailableForTag
+            '+setCreativeID:':
+                name: setCreativeID
+
+    HZIncentivizedAd: # DONE
+        methods:
+            '+show':
+                name: show
+            '+showForTag:':
+                name: show
+            '+showForTag:completion:':
+                name: show
+            '+showWithOptions:':
+                name: show
+            '+setDelegate:':
+                name: setDelegate
+            '+fetch':
+                name: fetch
+            '+fetchWithCompletion:':
+                name: fetch
+            '+fetchForTag:':
+                name: fetch
+            '+fetchForTag:withCompletion:':
+                name: fetch
+            '+isAvailable':
+                name: isAvailable
+            '+isAvailableForTag:':
+                name: isAvailableForTag
+            '+setUserIdentifier:':
+                name: setCreativeID
+            '+setCreativeID:':
+                name: setCreativeID
+
+    HZBannerAdOptions: {} # DONE
+
+    HZShowOptions: {} # DONE
+
+
 protocols:
     HZAdsDelegate: # DONE
         methods:
@@ -96,12 +204,17 @@ protocols:
             '-didFailToCompleteAdWithTag:':
                 name: didFailToCompleteAd
 
-
-
-values:
-    (k?HZNetwork.*):
-        enum: HZNetwork
-        name: '#{g[0]}'
-        type: NSString
-
-
+    HZBannerAdDelegate: # DONE
+        methods:
+            '-bannerDidReceiveAd:':
+                name: bannerDidReceiveAd
+            '-bannerDidFailToReceiveAd:':
+                name: bannerDidFailToReceiveAd
+            '-bannerWasClicked:':
+                name: bannerWasClicked
+            '-bannerWillPresentModalView:':
+                name: bannerWillPresentModalView
+            '-bannerDidDismissModalView:':
+                name: bannerDidDismissModalView
+            '-bannerWillLeaveApplication:':
+                name: bannerWillLeaveApplication
