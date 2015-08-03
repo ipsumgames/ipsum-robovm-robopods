@@ -53,6 +53,7 @@ typedef enum {
  *  @param debugLevel The extent to which to log.
  */
 + (void) setDebugLevel: (HZDebugLevel) debugLevel;
++ (HZDebugLevel) debugLevel;
 
 + (void) info: (NSString *) message;
 + (void) error: (NSString *) message;

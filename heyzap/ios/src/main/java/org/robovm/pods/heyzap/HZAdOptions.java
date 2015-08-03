@@ -42,7 +42,8 @@ public enum /*<name>*/HZAdOptions/*</name>*/ implements ValuedEnum {
     AdvertiserOnly(2L),
     Amazon(4L),
     InstallTrackingOnly(2L),
-    DisableMedation(8L);
+    DisableMedation(8L),
+    DisableAutomaticIAPRecording(16L);
     /*</values>*/
 
     /*<bind>*/

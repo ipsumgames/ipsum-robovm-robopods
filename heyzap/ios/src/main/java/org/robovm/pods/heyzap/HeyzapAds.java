@@ -87,5 +87,7 @@ import org.robovm.apple.uikit.*;
     public static native void pauseExpensiveWork();
     @Method(selector = "resumeExpensiveWork")
     public static native void resumeExpensiveWork();
+    @Method(selector = "onIAPPurchaseComplete:productName:price:")
+    public static native void onIAPPurchaseComplete(String productId, String productName, NSDecimalNumber price);
     /*</methods>*/
 }
