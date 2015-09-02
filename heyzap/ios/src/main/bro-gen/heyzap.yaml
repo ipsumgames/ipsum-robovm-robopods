@@ -66,6 +66,8 @@ classes:
                 name: pauseExpensiveWork
             '+resumeExpensiveWork:':
                 name: resumeExpensiveWork
+            '+getRemoteDataJsonString:':
+                name: getRemoteDataJsonString
             '+onIAPPurchaseComplete:productName:price:':
                 name: onIAPPurchaseComplete
 
@@ -111,6 +113,10 @@ classes:
                 name: fetch
             '+fetchForTag:withCompletion:':
                 name: fetch
+            '+fetchForTags:':
+                name: fetchMultiple
+            '+fetchForTags:withCompletion:':
+                name: fetchMultiple
             '+isAvailable':
                 name: isAvailable
             '+isAvailableForTag:':
@@ -142,6 +148,10 @@ classes:
                 name: fetch
             '+fetchForTag:withCompletion:':
                 name: fetch
+            '+fetchForTags:':
+                name: fetchMultiple
+            '+fetchForTags:withCompletion:':
+                name: fetchMultiple
             '+isAvailable':
                 name: isAvailable
             '+isAvailableForTag:':
@@ -169,6 +179,10 @@ classes:
                 name: fetch
             '+fetchForTag:withCompletion:':
                 name: fetch
+            '+fetchForTags:':
+                name: fetchMultiple
+            '+fetchForTags:withCompletion:':
+                name: fetchMultiple
             '+isAvailable':
                 name: isAvailable
             '+isAvailableForTag:':

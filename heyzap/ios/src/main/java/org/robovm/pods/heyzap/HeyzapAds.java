@@ -80,13 +80,15 @@ import org.robovm.apple.uikit.*;
     @Method(selector = "defaultTagName")
     public static native String defaultTagName();
     @Method(selector = "remoteData")
-    public static native NSDictionary<?, ?> remoteData();
+    public static native NSDictionary remoteData();
     @Method(selector = "presentMediationDebugViewController")
     public static native void presentMediationDebugViewController();
     @Method(selector = "pauseExpensiveWork")
     public static native void pauseExpensiveWork();
     @Method(selector = "resumeExpensiveWork")
     public static native void resumeExpensiveWork();
+    @Method(selector = "getRemoteDataJsonString")
+    public static native String getRemoteDataJsonString();
     @Method(selector = "onIAPPurchaseComplete:productName:price:")
     public static native void onIAPPurchaseComplete(String productId, String productName, NSDecimalNumber price);
     /*</methods>*/

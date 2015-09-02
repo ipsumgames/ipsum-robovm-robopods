@@ -51,7 +51,7 @@
 #define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type
 #endif
 
-#define SDK_VERSION @"9.0.6"
+#define SDK_VERSION @"9.1.2"
 
 #if __has_feature(objc_modules)
 @import AdSupport;
@@ -111,12 +111,13 @@ extern NSString * const HZNetworkCallbackIncentivizedResultIncomplete;
 extern NSString * const HZNetworkCallbackIncentivizedResultComplete;
 extern NSString * const HZNetworkCallbackAudioStarting;
 extern NSString * const HZNetworkCallbackAudioFinished;
-extern NSString * const HZNetworkCallbackBannerLoaded;
-extern NSString * const HZNetworkCallbackBannerClick;
-extern NSString * const HZNetworkCallbackBannerHide;
-extern NSString * const HZNetworkCallbackBannerDismiss;
-extern NSString * const HZNetworkCallbackBannerFetchFailed;
 extern NSString * const HZNetworkCallbackLeaveApplication;
+
+extern NSString * const HZNetworkCallbackBannerLoaded DEPRECATED_ATTRIBUTE;
+extern NSString * const HZNetworkCallbackBannerClick DEPRECATED_ATTRIBUTE;
+extern NSString * const HZNetworkCallbackBannerHide DEPRECATED_ATTRIBUTE;
+extern NSString * const HZNetworkCallbackBannerDismiss DEPRECATED_ATTRIBUTE;
+extern NSString * const HZNetworkCallbackBannerFetchFailed DEPRECATED_ATTRIBUTE;
 
 // Chartboost Specific Callbacks
 extern NSString * const HZNetworkCallbackChartboostMoreAppsFetchFailed;
@@ -314,6 +315,13 @@ extern NSString * const HZRemoteDataRefreshedNotification;
  *  @see pauseExpensiveWork
  */
 + (void)resumeExpensiveWork;
+
+/**
+ * Returns a raw json string of developer-settable data or an empty json string if no data is available.
+ * 
+ */
++ (NSString *) getRemoteDataJsonString;
+
 
 #pragma mark - Record IAP Transaction
 

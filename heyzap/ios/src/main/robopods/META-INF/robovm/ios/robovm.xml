@@ -1,7 +1,6 @@
 <config>
     <libs>
         <lib>libs/libAppLovinSdk.a</lib>
-        <lib>libs/libHZAdMobBannerSupport.a</lib>
 
         <lib>xml2</lib>
         <lib>z</lib>

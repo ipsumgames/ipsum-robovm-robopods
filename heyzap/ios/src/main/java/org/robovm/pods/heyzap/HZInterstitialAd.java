@@ -69,6 +69,10 @@ import org.robovm.apple.uikit.*;
     public static native void fetch(String tag);
     @Method(selector = "fetchForTag:withCompletion:")
     public static native void fetch(String tag, @Block VoidBlock2<Boolean, NSError> completion);
+    @Method(selector = "fetchForTags:")
+    public static native void fetchMultiple(NSArray<?> tags);
+    @Method(selector = "fetchForTags:withCompletion:")
+    public static native void fetchMultiple(NSArray<?> tags, @Block VoidBlock2<Boolean, NSError> completion);
     @Method(selector = "isAvailable")
     public static native boolean isAvailable();
     @Method(selector = "isAvailableForTag:")
