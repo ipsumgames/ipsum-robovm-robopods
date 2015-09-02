@@ -58,6 +58,8 @@ import org.robovm.apple.uikit.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "dimensionsDescription")
+    public native String dimensionsDescription();
     @Method(selector = "placeBannerInView:position:options:success:failure:")
     public static native void placeBanner(UIView view, HZBannerPosition position, HZBannerAdOptions options, @Block VoidBlock1<HZBannerAd> success, @Block VoidBlock1<NSError> failure);
     @Method(selector = "requestBannerWithOptions:success:failure:")

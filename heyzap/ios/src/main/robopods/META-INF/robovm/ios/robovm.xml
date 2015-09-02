@@ -9,6 +9,7 @@
     <frameworks>
         <framework>HeyzapAds</framework>
         <framework>GoogleMobileAds</framework>
+        <framework>Chartboost</framework>
 
         <framework>AVFoundation</framework>
         <framework>AdSupport</framework>
@@ -43,6 +44,8 @@
         <symbol>HZNetworkAdMob</symbol>
         <symbol>HZNetworkIAd</symbol>
         <symbol>HZNetworkHyperMX</symbol>
+        <symbol>HZNetworkHeyzapExchange</symbol>
+
         <symbol>HZNetworkCallbackInitialized</symbol>
         <symbol>HZNetworkCallbackShow</symbol>
         <symbol>HZNetworkCallbackAvailable</symbol>

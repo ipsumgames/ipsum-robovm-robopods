@@ -53,6 +53,8 @@ import org.robovm.apple.uikit.*;
     /*<methods>*/
     @Method(selector = "setDebugLevel:")
     public static native void setDebugLevel(HZDebugLevel debugLevel);
+    @Method(selector = "debugLevel")
+    public static native HZDebugLevel debugLevel();
     @Method(selector = "info:")
     public static native void info(String message);
     @Method(selector = "error:")

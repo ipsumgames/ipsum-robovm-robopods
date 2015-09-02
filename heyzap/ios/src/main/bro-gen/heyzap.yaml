@@ -66,11 +66,15 @@ classes:
                 name: pauseExpensiveWork
             '+resumeExpensiveWork:':
                 name: resumeExpensiveWork
+            '+onIAPPurchaseComplete:productName:price:':
+                name: onIAPPurchaseComplete
 
     HZLog: # DONE
         methods:
             '+setDebugLevel:':
                 name: setDebugLevel
+            '+debugLevel':
+                name: debugLevel
             '+info:':
                 name: info
             '+error:':
@@ -84,6 +88,8 @@ classes:
                 name: placeBanner
             '+requestBannerWithOptions:success:failure:':
                 name: requestBanner
+            '+dimensionsDescription':
+                name: dimensionsDescription
 
     HZInterstitialAd: # DONE
         methods:
