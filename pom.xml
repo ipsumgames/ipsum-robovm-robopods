@@ -160,6 +160,7 @@
     </pluginRepositories>
 
     <modules>
+        <module>billing</module>
         <module>bolts</module>
         <module>chartboost</module>
         <module>facebook</module>
