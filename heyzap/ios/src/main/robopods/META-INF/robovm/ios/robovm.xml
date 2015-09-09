@@ -1,4 +1,9 @@
 <config>
+    <resources>
+        <resource>
+            <directory>res</directory>
+        </resource>
+    </resources>
     <libs>
         <lib>libs/libAppLovinSdk.a</lib>
 
@@ -9,6 +14,9 @@
         <framework>HeyzapAds</framework>
         <framework>GoogleMobileAds</framework>
         <framework>Chartboost</framework>
+        <framework>Chartboost</framework>
+        <framework>UnityAds</framework>
+        <framework>VungleSDK</framework>
 
         <framework>AVFoundation</framework>
         <framework>AdSupport</framework>
