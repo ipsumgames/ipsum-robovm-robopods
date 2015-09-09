@@ -59,6 +59,10 @@ import org.robovm.apple.uikit.*;
     public native @Block VoidBlock2<Boolean, NSError> getCompletion();
     @Property(selector = "setCompletion:")
     public native void setCompletion(@Block VoidBlock2<Boolean, NSError> v);
+    @Property(selector = "incentivizedInfo")
+    public native String getIncentivizedInfo();
+    @Property(selector = "setIncentivizedInfo:")
+    public native void setIncentivizedInfo(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

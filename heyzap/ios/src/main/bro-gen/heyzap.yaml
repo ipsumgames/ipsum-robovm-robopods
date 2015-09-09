@@ -28,8 +28,6 @@ enums:
 classes:
     HeyzapAds: # DONE
         methods:
-            '+setIncentiveDelegate:':
-                exclude: true # deprecated
             '+setDelegate:forNetwork:':
                 name: setDelegate
             '+networkCallbackWithBlock:':

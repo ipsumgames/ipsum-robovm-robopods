@@ -51,7 +51,7 @@
 #define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type
 #endif
 
-#define SDK_VERSION @"9.1.2"
+#define SDK_VERSION @"9.1.5"
 
 #if __has_feature(objc_modules)
 @import AdSupport;
@@ -217,16 +217,9 @@ extern NSString * const HZRemoteDataRefreshedNotification;
 @end
 
 /**
- *  A class with miscellaneous Heyzap Ads methods.
+ *  A class with miscellaneous Heyzap Ads methods. All methods on this class must be called from the main queue.
  */
 @interface HeyzapAds : NSObject
-
-/**
- *  Sets the object to receive HZIncentivizedAdDelegate callbacks
- *
- *  @param delegate An object conforing to the HZIncentivizedAdDelegate protocol
- */
-+ (void) setIncentiveDelegate: (id<HZIncentivizedAdDelegate>) delegate __attribute__((deprecated("Call `HZIncentivizedAd setDelegate:` instead.")));
 
 /**
  *  Sets an object to be forwarded all callbacks sent by the specified network.

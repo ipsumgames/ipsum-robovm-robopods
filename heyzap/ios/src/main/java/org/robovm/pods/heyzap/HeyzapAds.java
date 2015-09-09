@@ -80,7 +80,7 @@ import org.robovm.apple.uikit.*;
     @Method(selector = "defaultTagName")
     public static native String defaultTagName();
     @Method(selector = "remoteData")
-    public static native NSDictionary remoteData();
+    public static native NSDictionary<?, ?> remoteData();
     @Method(selector = "presentMediationDebugViewController")
     public static native void presentMediationDebugViewController();
     @Method(selector = "pauseExpensiveWork")

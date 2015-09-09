@@ -39,7 +39,7 @@
 
 @class HZShowOptions;
 
-/** HZIncentivizedAd is responsible for fetching and showing incentivized video ads. */
+/** HZIncentivizedAd is responsible for fetching and showing incentivized video ads. All methods on this class must be called from the main queue. */
 @interface HZIncentivizedAd : NSObject
 
 + (void)setDelegate:(id<HZIncentivizedAdDelegate>)delegate;
