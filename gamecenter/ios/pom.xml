@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.robovm</groupId>
         <artifactId>robopods-gamecenter-parent</artifactId>
-        <version>1.7.0</version>
+        <version>1.8.0</version>
     </parent>
     <artifactId>robopods-gamecenter-ios</artifactId>
     <name>RoboPods Game Center iOS</name>
