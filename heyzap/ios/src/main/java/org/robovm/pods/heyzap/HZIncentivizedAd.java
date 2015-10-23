@@ -75,8 +75,6 @@ import org.robovm.apple.uikit.*;
     public static native boolean isAvailable();
     @Method(selector = "isAvailableForTag:")
     public static native boolean isAvailableForTag(String tag);
-    @Method(selector = "setUserIdentifier:")
-    public static native void setCreativeID(String userIdentifier);
     @Method(selector = "setCreativeID:")
     public static native void setCreativeID(int creativeID);
     /*</methods>*/

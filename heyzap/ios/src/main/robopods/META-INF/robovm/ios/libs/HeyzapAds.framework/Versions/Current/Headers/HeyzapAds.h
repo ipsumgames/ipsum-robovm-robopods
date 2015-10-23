@@ -51,7 +51,7 @@
 #define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type
 #endif
 
-#define SDK_VERSION @"9.1.5"
+#define SDK_VERSION @"9.2.4"
 
 #if __has_feature(objc_modules)
 @import AdSupport;
@@ -69,19 +69,30 @@
 #endif
 
 typedef NS_ENUM(NSUInteger, HZAdOptions) {
-    HZAdOptionsNone = 0 << 0,
-    HZAdOptionsDisableAutoPrefetching = 1 << 0,
-    HZAdOptionsAdvertiserOnly = 1 << 1,
-    HZAdOptionsAmazon = 1 << 2,
-    HZAdOptionsInstallTrackingOnly = 1 << 1,
+    HZAdOptionsNone = 0 << 0, // 0
     /**
-     *  Pass this to disable mediation. This is not required, but is recommended for developers not using mediation. If you're mediating Heyzap through someone (e.g. AdMob), it is *strongly* recommended that you disable Heyzap's mediation to prevent any potential conflicts.
+     *  Pass this to disable automatic prefetching of ads. Ad prefetching occurs immediately after you initialize the Heyzap SDK and also after ads are dismissed.
      */
-    HZAdOptionsDisableMedation = 1 << 3,
+    HZAdOptionsDisableAutoPrefetching = 1 << 0, // 1
+    /**
+     *  Pass this if you are only integrating the Heyzap SDK into your app to track game installs as an advertiser. No ads will be fetched.
+     */
+    HZAdOptionsInstallTrackingOnly = 1 << 1, // 2
+    /**
+     *  @deprecated
+     *  Please use HZAdOptionsInstallTrackingOnly instead.
+     */
+    HZAdOptionsAdvertiserOnly DEPRECATED_ATTRIBUTE = HZAdOptionsInstallTrackingOnly,
+    // This doesn't do anything for iOS, but is here to keep parity with the Android SDK's flag values for the sake of Unity, AIR, etc.
+    HZAdOptionsAmazon DEPRECATED_ATTRIBUTE = 1 << 2, // 4
+    /**
+     *  Pass this to disable mediation. This is not required, but is recommended for developers not using mediation (i.e: not integrating any 3rd-pary network SDKs). If you're mediating Heyzap through someone (e.g. AdMob), it is *strongly* recommended that you disable Heyzap's mediation to prevent any potential conflicts.
+     */
+    HZAdOptionsDisableMedation = 1 << 3, // 8
     /**
      * Pass this to disable recording of In-App Purchase data
      */
-    HZAdOptionsDisableAutomaticIAPRecording = 1 << 4,
+    HZAdOptionsDisableAutomaticIAPRecording = 1 << 4, // 16
 };
 
 
@@ -96,8 +107,9 @@ extern NSString * const HZNetworkChartboost;
 extern NSString * const HZNetworkAdColony;
 extern NSString * const HZNetworkAdMob;
 extern NSString * const HZNetworkIAd;
-extern NSString * const HZNetworkHyperMX;
+extern NSString * const HZNetworkHyprMX;
 extern NSString * const HZNetworkHeyzapExchange;
+extern NSString * const HZNetworkLeadbolt;
 
 // General Network Callbacks
 extern NSString * const HZNetworkCallbackInitialized;
@@ -278,7 +290,7 @@ extern NSString * const HZRemoteDataRefreshedNotification;
 /**
  * Returns a dictionary of developer-settable data or an empty dictionary if no data is available.
  
- * Note: This data is cached, so it will usually be available at app launch. It is updated via a network call that is made when `[HeyzapAds startWithPublisherId:]` (or one of its related methods) is called. If you want to guarantee that the data has been refreshed, only use it after receiving an NSNotification with name=`HZRemoteDataRefreshedNotification`. The userInfo passed with the notification will be the same NSDictionary you can receive with this method call.
+ * @note This data is cached, so it will usually be available at app launch. It is updated via a network call that is made when `[HeyzapAds startWithPublisherId:]` (or one of its related methods) is called. If you want to guarantee that the data has been refreshed, only use it after receiving an NSNotification with name=`HZRemoteDataRefreshedNotification`. The userInfo passed with the notification will be the same NSDictionary you can receive with this method call.
  */
 + (NSDictionary *) remoteData;
 
@@ -298,7 +310,8 @@ extern NSString * const HZRemoteDataRefreshedNotification;
  *
  *  If you are experiencing frame drops after adding mediation, you can use this method to prevent Heyzap from starting these expensive operations. Note that this could cause the time to finish a fetch take significantly longer. If you use this method, please take every opportunity to call `resumeExpensiveWork`; even spending a tenth of a second on a post-level screen is ample time for the most expensive operations to complete.
  *
- *  @warning Using this method is likely to extend the amount of time until you receive an ad from Heyzap Mediation. Please only use this method if you are experiencing performance issues and after reading this documentation. Note: you *must* call `resumeExpensiveWork` to show ads.
+ *  @warning Using this method is likely to extend the amount of time until you receive an ad from Heyzap Mediation. Please only use this method if you are experiencing performance issues and after reading this documentation. 
+ *  @note You *must* call `resumeExpensiveWork` to show ads after calling this.
  */
 + (void)pauseExpensiveWork;
 

@@ -48,8 +48,9 @@
         <symbol>HZNetworkAdColony</symbol>
         <symbol>HZNetworkAdMob</symbol>
         <symbol>HZNetworkIAd</symbol>
-        <symbol>HZNetworkHyperMX</symbol>
+        <symbol>HZNetworkHyprMX</symbol>
         <symbol>HZNetworkHeyzapExchange</symbol>
+        <symbol>HZNetworkLeadbolt</symbol>
 
         <symbol>HZNetworkCallbackInitialized</symbol>
         <symbol>HZNetworkCallbackShow</symbol>
