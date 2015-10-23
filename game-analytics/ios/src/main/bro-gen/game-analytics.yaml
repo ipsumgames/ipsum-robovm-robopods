@@ -17,6 +17,7 @@ enums:
 classes:
     GameAnalytics: # DONE
         methods:
+
             '+configureAvailableCustomDimensions01:':
                 name: configureAvailableCustomDimensions01
             '+configureAvailableCustomDimensions02:':
